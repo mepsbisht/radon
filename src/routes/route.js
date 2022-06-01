@@ -1,10 +1,18 @@
 const express = require('express');
-const externalModule = require('logger/logger.js')
+const externalModule = require('../logger/logger.js')
+const externalModule2 = require('../util/helper.js')
+const  externalModule3=require('../validator/formatter.js')
 
 const router = express.Router();
 
 router.get('/test-me', function (req, res) {
-    externalModule.welcome()
+    externalModule.welcome();
+    externalModule2.printDate();
+    externalModule2.printMonth();
+    externalModule2.getBatchInfo();
+    externalModule3.trim();
+    externalModule3.changeToLowerCase();
+    externalModule3.changeToUpperCase();
     res.send('My first ever api!')
 });
 
