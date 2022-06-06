@@ -35,7 +35,7 @@ const bookByPrice = async function (req, res) {
 };
 
 const randomBook = async function (req, res) {
-  let allBooks = await BookModel.find({ totalPages: { $gt: 500 } });
+  let allBooks = await BookModel.find({totalPages: { $gt: 500 } ,available:true});
   res.send({ msg: allBooks });
 };
 

@@ -5,6 +5,7 @@ const bookSchema = new mongoose.Schema(
     bookName: { type: String, required: true },
     authorName:String,
     totalPages:Number,
+    available:Boolean,
     prices: {
       indianPrice: String,
       europePrice: String,
