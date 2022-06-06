@@ -9,10 +9,7 @@ const createBook = async function (req, res) {
 };
 
 const getBooksData = async function (req, res) {
-  let allBooks = await BookModel.find({
-    authorName: "pratham",
-    bookName: "superman",
-  });
+  let allBooks = await BookModel.find().select( { bookName: 1, authorName: 1, _id: 0})
   res.send({ msg: allBooks });
 };
 
