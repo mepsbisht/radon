@@ -63,7 +63,16 @@ const updatePrice = async function (req, res) {
   res.send({ data: updatePrice });
 };
 
+// const sumOfPrice = async function (req, res) {
+//   let totalPrice = await bookModel.aggregate([
+//     { $group: { _id: $name, totalPrice: { $sum: price} } },
+//     { $sort: { totalPrice: -1 } },
+//   ]);
+//   res.send({ msg: totalPrice });
+// };
+
 module.exports.createBook = createBook;
 module.exports.getBooksData = getBooksData;
 module.exports.updateHardCover = updateHardCover;
 module.exports.updatePrice = updatePrice;
+// module.exports.sumOfPrice = sumOfPrice;

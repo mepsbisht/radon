@@ -21,4 +21,6 @@ router.put("/updateHardCover", bookController.updateHardCover);
 
 router.put("/updatePrice", bookController.updatePrice);
 
+// router.get("/sumOfPrice", bookController.sumOfPrice);
+
 module.exports = router;
