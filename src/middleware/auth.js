@@ -8,15 +8,17 @@ const authenticate = async function (req, res, next) {
 
   // If no token is present in the request header return error
   if (!token) return res.send({ status: false, msg: "token must be present" });
+  let decodedToken = jwt.verify(token, "functionup-radon");
+  if (!decodedToken)
+    return res.send({ status: false, msg: "token is invalid" });
   next();
 };
 
 // AUTHORISATION FOR USER TO MAKE CHANGES
-const authorise = async function (req, res) {
+const authorise = async function (req, res, next) {
   let token = req.headers["x-auth-token"];
   let decodedToken = jwt.verify(token, "functionup-radon");
-  if (!decodedToken)
-    return res.send({ status: false, msg: "token is invalid" });
+
   let userToBeModified = req.params.userId;
   let userLoggedIn = decodedToken.userId;
 
