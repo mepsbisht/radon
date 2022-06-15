@@ -18,4 +18,6 @@ router.put("/users/:userId",middleware.mid1, userController.updateUser)
 
 router.delete("/delete/:userId",middleware.mid1, userController.deleteData)
 
+router.post("/users/:userId/posts", middleware.mid1,userController.postMessage)
+
 module.exports = router;
