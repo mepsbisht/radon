@@ -29,3 +29,4 @@ module.exports = mongoose.model('User', userSchema) //users
 
 // String, Number
 // Boolean, Object/json, array
+// value="https://cdn-api.co-vin.in/api"
